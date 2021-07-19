@@ -38,11 +38,11 @@ public class UpdateManager {
     private JSONArray args;
     private CordovaInterface cordova;
     private CallbackContext callbackContext;
-    private String packageName;
-    private Context mContext;
-    private MsgBox msgBox;
+    private final String packageName;
+    private final Context mContext;
+    private final MsgBox msgBox;
     private Boolean isDownloading = false;
-    private List<Version> queue = new ArrayList<Version>(1);
+    private final List<Version> queue = new ArrayList<>(1);
     private CheckUpdateThread checkUpdateThread;
     private DownloadApkThread downloadApkThread;
 
@@ -76,7 +76,7 @@ public class UpdateManager {
         return this;
     }
 
-    private Handler mHandler = new Handler() {
+    private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(android.os.Message msg) {
             super.handleMessage(msg);
@@ -152,12 +152,12 @@ public class UpdateManager {
         boolean skipPromptDialog = false;
         try {
             skipPromptDialog = options.getBoolean("skipPromptDialog");
-        } catch (JSONException e) {}
+        } catch (JSONException ignored) {}
 
         boolean skipProgressDialog = false;
         try {
             skipProgressDialog = options.getBoolean("skipProgressDialog");
-        } catch (JSONException e) {}
+        } catch (JSONException ignored) {}
 
         //比对版本号
         //检查软件是否有更新版本
@@ -182,12 +182,9 @@ public class UpdateManager {
         }
     }
 
-    private OnClickListener noticeDialogOnClick = new OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            dialog.dismiss();
-            mHandler.sendEmptyMessage(Constants.DOWNLOAD_CLICK_START);
-        }
+    private final OnClickListener noticeDialogOnClick = (dialog, which) -> {
+        dialog.dismiss();
+        mHandler.sendEmptyMessage(Constants.DOWNLOAD_CLICK_START);
     };
 
     private void emitNoticeDialogOnClick() {
@@ -196,7 +193,7 @@ public class UpdateManager {
         boolean skipProgressDialog = false;
         try {
             skipProgressDialog = options.getBoolean("skipProgressDialog");
-        } catch (JSONException e) {}
+        } catch (JSONException ignored) {}
 
         // 显示下载对话框
         Map<String, Object> ret = msgBox.showDownloadDialog(
@@ -213,42 +210,28 @@ public class UpdateManager {
      * 手动安装
      * Download again
      */
-    private OnClickListener downloadDialogOnClickNeu = new OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            //Implemented in DownloadHandler.java
-        }
+    private final OnClickListener downloadDialogOnClickNeu = (dialog, which) -> {
+        //Implemented in DownloadHandler.java
     };
     /**
      * 重新下载
      * Download again
      */
-    private OnClickListener downloadDialogOnClickPos = new OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            dialog.dismiss();
-            mHandler.sendEmptyMessage(Constants.DOWNLOAD_CLICK_START);
-        }
+    private final OnClickListener downloadDialogOnClickPos = (dialog, which) -> {
+        dialog.dismiss();
+        mHandler.sendEmptyMessage(Constants.DOWNLOAD_CLICK_START);
     };
     /**
      * 转到后台更新
      * Update in background
      */
-    private OnClickListener downloadDialogOnClickNeg = new OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            dialog.dismiss();
-            // 设置取消状态
-            //downloadApkThread.cancelBuildUpdate();
-        }
+    private final OnClickListener downloadDialogOnClickNeg = (dialog, which) -> {
+        dialog.dismiss();
+        // 设置取消状态
+        //downloadApkThread.cancelBuildUpdate();
     };
 
-    private OnClickListener errorDialogOnClick = new OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            dialog.dismiss();
-        }
-    };
+    private final OnClickListener errorDialogOnClick = (dialog, which) -> dialog.dismiss();
 
     /**
      * 下载apk文件

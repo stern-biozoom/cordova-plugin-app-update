@@ -19,8 +19,8 @@ import java.util.Map;
  */
 public class MsgBox {
     public static final String TAG = "MsgBox";
-    private Context mContext;
-    private MsgHelper msgHelper;
+    private final Context mContext;
+    private final MsgHelper msgHelper;
 
     private Dialog noticeDialog;
     private AlertDialog downloadDialog;
