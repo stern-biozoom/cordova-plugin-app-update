@@ -6,7 +6,7 @@
     <string name="update_update_btn">Actualizar</string>
     <string name="updating">Actualizando</string>
     <string name="update_cancel">Cancelar</string>
-    <string name="update_bg">Esconder progreso</string>
+    <string name="update_bg">Cerrar el dialogo</string>
     <string name="download_complete_title">Descarga completa</string>
     <string name="download_complete_pos_btn">Descargar nuevamente</string>
     <string name="download_complete_neu_btn">Instalar manualmente</string>

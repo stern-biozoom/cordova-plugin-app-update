@@ -6,8 +6,7 @@
     <string name="update_update_btn">আপডেট করুন</string>
     <string name="updating">আপডেট করা হচ্ছে</string>
     <string name="update_cancel">দরকার নাই</string>
-    <string name="update_bg">অ্যাপ ব্যাবহার করার মাঝে ডাউনলোড করুন</string>
-    <string name="download_complete">ডাউনলোড পূর্ণ</string>
+    <string name="update_bg">কথোপকথন খারিজ করুন</string>
     <string name="download_complete_title">ডাউনলোড পূর্ণ</string>
     <string name="download_complete_pos_btn">আবার ডাউনলোড করুন</string>
     <string name="download_complete_neu_btn">নিজে ইন্সটল করুন</string>

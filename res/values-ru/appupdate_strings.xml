@@ -6,8 +6,7 @@
     <string name="update_update_btn">Обновить</string>
     <string name="updating">Обновляется</string>
     <string name="update_cancel">Отмена</string>
-    <string name="update_bg">Обновить в фоне</string>
-    <string name="download_complete">Скачивание завершено</string>
+    <string name="update_bg">Закройте диалог</string>
     <string name="download_complete_title">Скачивание завершено</string>
     <string name="download_complete_pos_btn">Скачать заново</string>
     <string name="download_complete_neu_btn">Установить вручную</string>
