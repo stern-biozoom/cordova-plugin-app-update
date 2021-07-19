@@ -140,6 +140,7 @@ versionName | versionCode
 * 🇪🇸 es
 * 🇷🇺 ru
 * 🇰🇷 ko
+* 🇯🇦 ja
 
 # Platforms
 Android only

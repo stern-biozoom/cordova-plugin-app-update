@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="update_latest">これで、最新のアップデートができました</string>
+    <string name="update_title">新規更新</string>
+    <string name="update_message">ソフトウェアをアップデートする必要があります。</string>
+    <string name="update_update_btn">更新</string>
+    <string name="updating">更新作業中</string>
+    <string name="update_cancel">キャンセル</string>
+    <string name="update_bg">バックグラウンドでの更新</string>
+    <string name="download_complete">ダウンロード完了</string>
+    <string name="download_complete_title">ダウンロード完了</string>
+    <string name="download_complete_pos_btn">もう一度ダウンロード</string>
+    <string name="download_complete_neu_btn">手動インストール</string>
+
+    <string name="update_error_title">エラー</string>
+    <string name="update_error_message">現在のネットワークは利用できません。ネットワーク設定を確認してください。</string>
+    <string name="update_error_yes_btn">OK</string>
+</resources>
